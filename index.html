@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Page Title</title>
+  <title>Rock, Paper, Scissors</title>
   <meta charset="UTF-8"/>
 </head>
 <body>
   <script>
-    // Your JavaScript goes here!
-    console.log("Hello, World!")
+    function computerPlay() {
+      let choice = ["rock" , "paper", "scissors"];
+      return choice[Math.floor(Math.random() * 3)];
+    }
+    function playRound(playerSelection, computerSelection) {
+      var outcome
+      if (playerSelection.toLowerCase() === computerSelection) {
+      outcome = "It's a draw!";
+      }
+      else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
+      outcome = "Rock smashes Scissors, You win";
+      }
+      else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
+      outcome = "Scissors cuts Paper, You win";
+      }
+      else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
+      outcome = "Paper covers Rock, You win";
+      }
+      else {
+      outcome = `${computerSelection} beats ${playerSelection}, you lose!`;
+      }
+      alert(outcome);
+    }
+    function game() {
+      let playerScore = 0
+      let computerScore = 0
+      playerSelection = prompt("Rock, Paper or Scissors?")
+      console.log(playRound(playerSelection, computerPlay()))
+    }
+    game()
   </script>
 </body>
 </html>
