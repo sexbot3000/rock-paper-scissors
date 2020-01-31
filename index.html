@@ -8,6 +8,7 @@
   <script>
     let playerScore = 0
     let computerScore = 0
+    const playing = true
 
     function computerPlay() {
       let choice = ["rock" , "paper", "scissors"];
@@ -53,8 +54,23 @@
       else {
         alert(`You: ${playerScore} - Me: ${computerScore}, you lose!`)
       }
+      playAgain()
     }
-    game()
+    
+    function playAgain() {
+      ask = prompt('Play again? (Yes/No)');
+      if (ask.toLowerCase() === 'yes') {
+        playerScore = 0;
+        computerScore = 0;
+      }
+      else {
+        alert('This was part of The Odin Project, created by sexbot3000')
+        playing = false
+      }
+    }
+    while (playing === true) {
+      game()
+    }
   </script>
 </body>
 </html>
