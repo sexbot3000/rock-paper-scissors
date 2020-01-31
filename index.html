@@ -40,11 +40,9 @@
     }
 
     function game() {
-      playRound(prompt('Rock, Paper or Scissors?'), computerPlay());
-      playRound(prompt('Rock, Paper or Scissors?'), computerPlay());
-      playRound(prompt('Rock, Paper or Scissors?'), computerPlay());
-      playRound(prompt('Rock, Paper or Scissors?'), computerPlay());
-      playRound(prompt('Rock, Paper or Scissors?'), computerPlay());
+      for (i = 0; i < 5; i++) {
+        playRound(prompt('Rock, Paper or Scissors?'), computerPlay());
+      }
       if (playerScore === computerScore) {
         alert(`You: ${playerScore} - Me: ${computerScore}, it's a draw!`);
         }
