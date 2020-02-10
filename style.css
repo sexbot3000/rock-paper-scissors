@@ -1,0 +1,60 @@
+#theLot {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 40px;
+  }
+  
+  h2 {
+    text-align: center;
+    color: blue;
+    font-size: px;
+  }
+  
+  button {
+    height: 40px;
+    width: 150px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: blue;
+    color: white;
+    border-radius: 25px;
+  }
+  
+  #playerScoreShow {
+    float: left;
+    margin-left: 20%;
+  }
+  
+  #computerScoreShow {
+    float: right;
+    margin-right: 20%;
+  }
+  
+  #compScore {
+    margin-left: 50%;
+  }
+  
+  #playScore {
+    padding-left: 50%;
+  }
+  
+  .playerWins {
+    font-size: 32px;
+    color: blue;
+  }
+  
+  
+  
+  #results {
+    font-size: 20px;
+    color: green;
+    margin-top: 50px;
+  }
+  
+  .computerWins {
+    margin-right: 50%;
+    color: blue;
+  }

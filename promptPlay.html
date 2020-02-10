@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock, Paper, Scissors</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+    let playerScore = 0
+    let computerScore = 0
+    const playing = true
+
+    function computerPlay() {
+      let choice = ["rock" , "paper", "scissors"];
+      return choice[Math.floor(Math.random() * 3)];
+    }
+
+    function playRound(playerSelection, computerSelection) {
+      var outcome
+      if (playerSelection.toLowerCase() === computerSelection) {
+      outcome = "It's a draw!";
+      }
+      else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors") {
+      outcome = `${playerSelection} beats ${computerSelection}, you win!`;
+      playerScore++;
+      }
+      else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
+      outcome = `${playerSelection} beats ${computerSelection}, you win!`;
+      playerScore++;
+      }
+      else if (playerSelection.toLowerCase() === "paper" && computerSelection === "rock") {
+      outcome = `${playerSelection} beats ${computerSelection}, you win!`;
+      playerScore++;
+      }
+      else {
+      outcome = `${computerSelection} beats ${playerSelection}, you lose!`;
+      computerScore++;
+      }
+      alert(outcome);
+    }
+
+    function game() {
+      for (i = 0; i < 5; i++) {
+        playRound(prompt('Rock, Paper or Scissors?'), computerPlay());
+      }
+      if (playerScore === computerScore) {
+        alert(`You: ${playerScore} - Me: ${computerScore}, it's a draw!`);
+        }
+      else if (playerScore > computerScore) {
+        alert(`You: ${playerScore} - Me: ${computerScore}, you win!`);
+      }
+      else {
+        alert(`You: ${playerScore} - Me: ${computerScore}, you lose!`)
+      }
+      playAgain()
+    }
+    
+    function playAgain() {
+      ask = prompt('Play again? (Yes/No)');
+      if (ask.toLowerCase() === 'yes') {
+        playerScore = 0;
+        computerScore = 0;
+      }
+      else {
+        alert('This was part of The Odin Project, created by sexbot3000')
+        playing = false
+      }
+    }
+    while (playing === true) {
+      game()
+    }
+  </script>
+</body>
+</html>
